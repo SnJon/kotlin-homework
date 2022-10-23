@@ -1,5 +1,6 @@
 data class Post(
     var id: Int,
+    val date: Int,
     val createdBy: Int,
     val text: String,
     val postType: String = "post",
@@ -23,10 +24,11 @@ object WallService {
     }
 
     fun update(post: Post): Boolean {
-        val changePost = Post(0, 33, "change post", likes = 0)
-        for (iter in posts) {
-            if (post.id == iter.id) {
-                iter.createdBy == changePost.createdBy
+        val changePost = Post(0, 23102022, 33, "change post", canDelete = false, likes = 0)
+        for ((index, item) in posts.withIndex()) {
+            if (post.id == item.id) {
+                val updatePost = changePost.copy(id = item.id, date = item.date) //кроме id владельца и даты создания
+                posts[index] = updatePost
                 return true
             }
         }
@@ -39,12 +41,12 @@ object WallService {
 }
 
 fun main() {
-    val firstPost = Post(0, 11, "First post", likes = 0)
-    val secondPost = Post(0, 22, "Second post", likes = 0)
+    val firstPost = Post(0, 22102022, 11, "First post", likes = 0)
+    val secondPost = Post(0, 22102022, 22, "Second post", likes = 0)
 
     WallService.add(firstPost)
     WallService.add(secondPost)
 
-    WallService.printPosts()
     WallService.update(firstPost)
+    WallService.printPosts()
 }
