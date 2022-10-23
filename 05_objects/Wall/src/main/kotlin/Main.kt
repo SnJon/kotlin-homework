@@ -22,17 +22,15 @@ object WallService {
         return posts.last()
     }
 
-    fun likeById(id: Int) {
-        for ((index, post) in posts.withIndex()) {
-            if (post.id == id) {
-                posts[index] = post.copy(likes = post.likes + 1)
+    fun update(post: Post): Boolean {
+        val changePost = Post(0, 33, "change post", likes = 0)
+        for (iter in posts) {
+            if (post.id == iter.id) {
+                iter.createdBy == changePost.createdBy
+                return true
             }
         }
-    }
-
-    fun update(post: Post): Boolean {
-
-        return true
+        return false
     }
 
     fun printPosts() {
@@ -46,6 +44,7 @@ fun main() {
 
     WallService.add(firstPost)
     WallService.add(secondPost)
-    WallService.likeById(1)
+
     WallService.printPosts()
+    WallService.update(firstPost)
 }
