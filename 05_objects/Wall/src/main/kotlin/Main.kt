@@ -24,11 +24,9 @@ object WallService {
     }
 
     fun update(post: Post): Boolean {
-        val changePost = Post(0, 23102022, 33, "change post", canDelete = false, likes = 0)
         for ((index, item) in posts.withIndex()) {
             if (post.id == item.id) {
-                val updatePost = changePost.copy(id = item.id, date = item.date) //кроме id владельца и даты создания
-                posts[index] = updatePost
+                posts[index] = post.copy(id = item.id, date = item.date, createdBy = 33, text = "change post", canDelete = false, likes = 0)
                 return true
             }
         }
