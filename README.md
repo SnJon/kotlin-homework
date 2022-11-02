@@ -17,3 +17,5 @@
 2.1 [Автотесты, работа с отладчиком и Continuous Integration](https://github.com/SnJon/MaxCoverage)
 
 2.2 [ООП: объекты и классы](https://github.com/SnJon/kotlin-homework/tree/main/05_objects)
+
+2.3 [ООП: композиция, наследование и интерфейсы](https://github.com/SnJon/WallTests)
