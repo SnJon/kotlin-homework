@@ -19,3 +19,11 @@
 2.2 [ООП: объекты и классы](https://github.com/SnJon/kotlin-homework/tree/main/05_objects)
 
 2.3 [ООП: композиция, наследование и интерфейсы](https://github.com/SnJon/WallTests)
+
+### Блок 3. Исключения, коллекции и продвинутые концепции
+
+---
+
+3.1 [Исключения](https://github.com/SnJon/WallTests/pull/3)
+
+3.2 [Generics и коллекции](https://github.com/SnJon/Notes)
